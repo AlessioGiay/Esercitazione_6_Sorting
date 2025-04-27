@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
 	const unsigned int size = stoi(argv[1]);
 	const unsigned int Simulation = 25;
 		
-	vector<unsigned int> v(size);
+	vector<double> v(size);
 	
 	iota(v.begin(), v.end(), 1);
 	random_shuffle(v.begin(), v.end());
@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 	double BubbleTime = 0;
 	for(size_t i = 0; i < Simulation; i++)
 	{
-		vector<unsigned int> copy = v;
+		vector<double> copy = v;
 		auto start = steady_clock::now();
 		SortLibrary::BubbleSort(copy);
 		auto end = steady_clock::now();
@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
 	double HeapTime = 0;
 	for(size_t i = 0; i < Simulation; i++)
 	{
-		vector<unsigned int> copy = v;
+		vector<double> copy = v;
 		auto start = steady_clock::now();
 		SortLibrary::HeapSort(copy);
 		auto end = steady_clock::now();
